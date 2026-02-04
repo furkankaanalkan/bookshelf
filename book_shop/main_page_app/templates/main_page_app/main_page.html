@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{%block content%}
+
+
+<div style="display: flex;  gap: 10px;">
+    <div class="card" style="width: 18rem;">
+    <img src="{%static  'main_page_app/sefil.webp' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Sefiller</h5>
+        <p class="card-text">Bir somun ekmek çaldığı için hayatı kararan bir adamın, sevgi ve fedakarlıkla örülü kefaret yolculuğudur.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    </div>
+
+
+    <div class="card" style="width: 18rem;">
+    <img src="https://m.media-amazon.com/images/I/41aD-EY9oDL._SL1000_.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Beyaz Diş</h5>
+        <p class="card-text">Vahşi bir kurdun, kırbaçla başlayan hayat yolculuğunun sevgi ve sadakatle ehlileşme destanıdır.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    </div>
+</div>
+
+
+{%endblock%}
