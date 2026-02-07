@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{%block content%}
+
+
+<form style="padding-left:400px; padding-top:100px; padding-right:400px;" action="" method="POST">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="Email">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" name="Password">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="check" name="Check">
+    <label class="form-check-label" for="check">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+{%endblock%}
