@@ -4,7 +4,8 @@ from . import views
 app_name = "main_page_app"
 
 urlpatterns = [
-    path("",views.main_page ,name="main_page"),
-    path("log-in.page/",views.login_page ,name="login_page"),
-    path("MyCart/",views.login_page ,name="cart"),
+    path("",views.list_books ,name="main_page"),
+    path("MyCart/",views.cart ,name="cart"),
+    path('signup/',views.Sign_up.as_view(),name="signup"),
 ]
+

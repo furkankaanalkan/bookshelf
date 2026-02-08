@@ -9,4 +9,4 @@ class Book(models.Model):
 
 
     def __str__(self):
-        return f"Name:{self.name} , Email:{self.book_description} , Password{self.image}"
+        return f"Name: {self.name} //// book_description: {self.book_description} //// image: {self.image}"
