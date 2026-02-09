@@ -3,21 +3,88 @@
 
 {%block content%}
 
-
-
-<form style="padding-left:400px; padding-top:100px; padding-right:400px;" action="" method="POST">
+<form style="max-width: 500px; margin: 100px auto;" method="POST">
     {% csrf_token %}
+
     <div class="mb-3">
-      <label for="username" class="form-label">username</label>
-      <input type="username" class="form-control" id="username" aria-describedby="username" name="username">
-      <div id="username" class="form-text">We'll never share your email with anyone else.</div>
+        <label class="form-label">Username</label>
+        <input type="text" name="username" class="form-control" required>
     </div>
+
     <div class="mb-3">
-      <label for="password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="password" name="password">
+        <label class="form-label">Password</label>
+        <input type="password" name="password1" class="form-control" required>
     </div>
-    <button type="submit" class="btn btn-primary">sing-in </button>
+
+    <div class="mb-3">
+        <label class="form-label">Password confirmation</label>
+        <input type="password" name="password2" class="form-control" required>
+    </div>
+
+    {% if form.errors %}
+        <div class="text-danger small mb-3">
+            check your information {{ form.errors }}
+        </div>
+    {% endif %}
+
+    <button type="submit" class="btn btn-primary w-100">Sign-up</button>
 </form>
 
+
+
+
+
+
+
+
+<!---
+<form style="max-width: 500px; margin: 100px auto;" method="POST">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label for="id_username" class="form-label">Kullanıcı Adı</label>
+        {{ form.username }}
+        <div class="form-text">Verileriniz bizimle güvende.</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="id_password1" class="form-label">Şifre</label>
+        {{ form.password1 }}
+    </div>
+
+    <div class="mb-3">
+        <label for="id_password2" class="form-label">Şifre Tekrar</label>
+        {{ form.password2 }}
+    </div>
+
+    {% if form.errors %}
+        <div class="alert alert-danger">
+            {{ form.errors }}
+        </div>
+    {% endif %}
+
+    <button type="submit" class="btn btn-primary w-100">Kayıt Ol</button>
+</form>
+-->
+
+
+<!---
+<form style="max-width: 500px; margin: 100px auto;"  method="POST">
+    {% csrf_token %}
+    
+    <div class="mb-3">
+        <label for="username" class="form-label">{{ form.username }}</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+        <div id="usernameHelp" class="form-text">We'll never share your data with anyone else.</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+
+    <button type="submit" name="action" class="btn btn-primary" value="signup">Sign In</button>
+</form>
+-->
 
 {%endblock%}

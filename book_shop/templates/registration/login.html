@@ -4,7 +4,7 @@
 {%block content%}
 
 {%if user.is_authenticated%}
-<h2 style="padding: 10px;">Welcome</h2>
+<h2 style="padding: 10px;">Welcome {{user.username}}</h2>
 {%else%}
 
 <form style="padding-left:400px; padding-top:100px; padding-right:400px;" action="{% url 'login' %}" method="POST">
